@@ -1,14 +1,15 @@
 function smallestIndex(nums: number[]): number {
-    const len = nums.length;
-    
-    for (let i = 0; i < len; i++) {
-        let num = nums[i];
+    const getDigitSum = (num: number) => {
         let sum = 0;
         while (num > 0) {
             sum += num % 10;
-            num = (num / 10) | 0; 
+            num = Math.floor(num / 10);
         }
-        if (sum === i) {
+        return sum;
+    };
+
+    for (let i = 0; i < nums.length; i++) {
+        if (getDigitSum(nums[i]) === i) {
             return i;
         }
     }
