@@ -4,22 +4,17 @@ function evaluate(s: string, knowledge: string[][]): string {
         map.set(key, value);
     }
     const result: string[] = [];
-    let isInsideBracket = false;
-    let currentKey = "";
+    let keyStart = -1;
     for (let i = 0; i < s.length; i++) {
         const char = s[i];
         if (char === '(') {
-            isInsideBracket = true;
-            currentKey = "";
+            keyStart = i + 1;
         } else if (char === ')') {
-            isInsideBracket = false;
-            result.push(map.has(currentKey) ? map.get(currentKey)! : "?");
-        } else {
-            if (isInsideBracket) {
-                currentKey += char;
-            } else {
-                result.push(char);
-            }
+            const key = s.slice(keyStart, i);
+            result.push(map.get(key) ?? "?");
+            keyStart = -1;
+        } else if (keyStart === -1) {
+            result.push(char); 
         }
     }
     return result.join("");
