@@ -1,6 +1,6 @@
 # 📝 20. Valid Parentheses (LeetCode)
 
-🔗 [Problem Link](https://leetcode.com/problems/valid-parentheses/?envType=daily-question&envId=2026-10-01)
+🔗 [Problem Link](https://leetcode.com/problems/valid-parentheses/)
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Easy-brightgreen) ![Language](https://img.shields.io/badge/Language-TypeScript-blue)
 
@@ -8,8 +8,8 @@
 String, Stack, Bracket Sequences
 
 ### 🚀 Performance
-- **Runtime:** N/A
-- **Memory:** N/A
+- **Runtime:** 1 ms
+- **Memory:** 58 MB
 
 ---
 
