@@ -3,7 +3,7 @@
 Track your progress on the Curated 100hrs Advanced DSA interview preparation list.
 
 ## Progress
-- **Completed:** 8 / 65 (12.3%)
+- **Completed:** 9 / 65 (13.8%)
 
 ---
 
@@ -72,7 +72,7 @@ Track your progress on the Curated 100hrs Advanced DSA interview preparation lis
 - [x] [Remove Outermost Parentheses](./TypeScript/Easy/1078. Remove Outermost Parentheses/)
 - [x] [Score of Parentheses](./TypeScript/Medium/886. Score of Parentheses/)
 - [x] [Minimum Add to Make Parentheses Valid](./TypeScript/Medium/957. Minimum Add to Make Parentheses Valid/)
-- [ ] Minimum Remove to Make Valid Parentheses
+- [x] [Minimum Remove to Make Valid Parentheses](./TypeScript/Medium/1371. Minimum Remove to Make Valid Parentheses/)
 - [x] [Minimum Insertions to Balance a Parentheses String](./TypeScript/Medium/1648. Minimum Insertions to Balance a Parentheses String/)
 
 ### 📂 Module  2.3: String Reduction & Transfor
