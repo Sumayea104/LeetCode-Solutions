@@ -1,6 +1,6 @@
 # 📝 3886. Sum of Sortable Integers (LeetCode)
 
-🔗 [Problem Link](https://leetcode.com/problems/sum-of-sortable-integers)
+🔗 [Problem Link](https://leetcode.com/problems/sum-of-sortable-integers/?envType=daily-question&envId=2026-10-20)
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Hard-red) ![Language](https://img.shields.io/badge/Language-Python-blue)
 
