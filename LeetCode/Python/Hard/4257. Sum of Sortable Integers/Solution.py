@@ -13,13 +13,8 @@ class Solution:
                     continue
                 
                 doubled = original_block + original_block
-                found = False
-                
                 target = tuple(sorted_block)
-                for j in range(k):
-                    if tuple(doubled[j:j + k]) == target:
-                        found = True
-                        break
+                found = any(tuple(doubled[j:j + k]) == target for j in range(k))
                 
                 if not found:
                     return False
