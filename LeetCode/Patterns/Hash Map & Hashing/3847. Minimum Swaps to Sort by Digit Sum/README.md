@@ -2,14 +2,14 @@
 
 🔗 [Problem Link](https://leetcode.com/problems/minimum-swaps-to-sort-by-digit-sum/)
 
-![Difficulty](https://img.shields.io/badge/Difficulty-Medium-orange) ![Language](https://img.shields.io/badge/Language-TypeScript-blue)
+![Difficulty](https://img.shields.io/badge/Difficulty-Medium-orange) ![Language](https://img.shields.io/badge/Language-Python-blue)
 
 ### 💡 Tags
 Array, Hash Table, Sorting
 
 ### 🚀 Performance
-- **Runtime:** 499 ms
-- **Memory:** 98 MB
+- **Runtime:** N/A
+- **Memory:** N/A
 
 ---
 
