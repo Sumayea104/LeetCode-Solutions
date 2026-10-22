@@ -14,14 +14,11 @@ class Solution:
                 
                 doubled = original_block + original_block
                 target = tuple(sorted_block)
-                found = any(tuple(doubled[j:j + k]) == target for j in range(k))
-                
-                if not found:
+                if not any(tuple(doubled[j:j + k]) == target for j in range(k)):
                     return False
             return True
 
-        k = 1
-        while k * k <= n:
+        for k in range(1, int(n**0.5) + 1):
             if n % k == 0:
                 if is_sortable(k):
                     total_sum += k
@@ -29,6 +26,5 @@ class Solution:
                 if other_divisor != k:
                     if is_sortable(other_divisor):
                         total_sum += other_divisor
-            k += 1
 
         return total_sum
