@@ -1,12 +1,19 @@
-from functools import cmp_to_key
 from typing import List
 
 
 class Solution:
 
     def maximumSaleItems(self, items: List[List[int]], budget: int) -> int:
-        max_f = max(f for f, _ in items)
-        min_p = min(p for _, p in items)
+        if not items or budget <= 0:
+            return 0
+
+        max_f = 0
+        min_p = items[0][1]
+        for f, p in items:
+            if f > max_f:
+                max_f = f
+            if p < min_p:
+                min_p = p
 
         freq = [0] * (max_f + 1)
         for f, _ in items:
@@ -14,37 +21,33 @@ class Solution:
 
         mult_count = [0] * (max_f + 1)
         for f in range(1, max_f + 1):
-            if freq[f] == 0:
-                continue
-            total = 0
-            for m in range(f, max_f + 1, f):
-                total += freq[m]
-            mult_count[f] = total
-        offers = []
+            if freq[f]:
+                total = 0
+                for m in range(f, max_f + 1, f):
+                    total += freq[m]
+                mult_count[f] = total
+        limit = min_p * 2
+        boosted = []
         for f, p in items:
-            gain = mult_count[f] - 1
-            if gain > 0:
-                offers.append((p, 2, gain))
-        offers.append((min_p, 1, None))  
-        def cmp_offers(a, b):
-            c1, v1, _ = a
-            c2, v2, _ = b
-            if v1 * c2 > v2 * c1:
-                return -1
-            if v1 * c2 < v2 * c1:
-                return 1
-            return 0
-
-        offers.sort(key=cmp_to_key(cmp_offers))
+            if p < limit:
+                gain = mult_count[f] - 1
+                if gain > 0:
+                    boosted.append((p, gain))
+        boosted.sort()
 
         total_items = 0
-        for cost, val, cap in offers:
-            if budget < cost:
+        rem = budget
+        for p, gain in boosted:
+            if rem < p:
                 continue
-            take = (budget // cost) if cap is None else min(cap, budget // cost)
-            total_items += take * val
-            budget -= take * cost
-            if budget == 0:
-                break
+            if gain * p <= rem:
+                total_items += gain * 2
+                rem -= gain * p
+            else:
+                take = rem // p
+                total_items += take * 2
+                rem -= take * p
+            if rem == 0:
+                return total_items
 
-        return total_items
+        return total_items + (rem // min_p)
